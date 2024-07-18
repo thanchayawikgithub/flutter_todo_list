@@ -1,18 +1,7 @@
 import 'package:flutter/material.dart';
-
-Widget getDrawer(BuildContext context) {
-  return Drawer(
-      child: ListView(
-    children: [
-      ListTile(
-          title: Text('Main Page'),
-          onTap: () => Navigator.pushNamed(context, MainPage.nameRoute)),
-      ListTile(
-          title: Text('Second Page'),
-          onTap: () => Navigator.pushNamed(context, SecondPage.nameRoute))
-    ],
-  ));
-}
+import 'package:flutter_todo_list/echo_my_name.dart';
+import 'package:flutter_todo_list/main_page.dart';
+import 'package:flutter_todo_list/second_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -27,48 +16,9 @@ class MainApp extends StatelessWidget {
       initialRoute: MainPage.nameRoute,
       routes: {
         MainPage.nameRoute: (context) => MainPage(),
-        SecondPage.nameRoute: (context) => SecondPage()
+        SecondPage.nameRoute: (context) => SecondPage(),
+        EchoMyName.nameRoute: (context) => EchoMyName()
       },
-    );
-  }
-}
-
-class MainPage extends StatelessWidget {
-  static const nameRoute = '/main_page';
-  const MainPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Main Page'),
-      ),
-      drawer: getDrawer(context),
-      body: Container(
-        child: Center(
-          child: Text('Main Page'),
-        ),
-      ),
-    );
-  }
-}
-
-class SecondPage extends StatelessWidget {
-  static const nameRoute = '/second_page';
-  const SecondPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Second Page'),
-      ),
-      drawer: getDrawer(context),
-      body: Container(
-        child: Center(
-          child: Text('Second Page'),
-        ),
-      ),
     );
   }
 }
