@@ -36,6 +36,7 @@ class _EchoMyNameState extends State<EchoMyName> {
         title: Text('Echo My Name'),
       ),
       body: Container(
+        padding: EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_todo_list/echo_my_name.dart';
 import 'package:flutter_todo_list/main_page.dart';
 import 'package:flutter_todo_list/second_page.dart';
+import 'package:flutter_todo_list/todo_list.dart';
 
 void main() {
   runApp(const MainApp());
@@ -17,7 +18,8 @@ class MainApp extends StatelessWidget {
       routes: {
         MainPage.nameRoute: (context) => MainPage(),
         SecondPage.nameRoute: (context) => SecondPage(),
-        EchoMyName.nameRoute: (context) => EchoMyName()
+        EchoMyName.nameRoute: (context) => EchoMyName(),
+        TodoList.nameRoute: (context) => TodoList()
       },
     );
   }
